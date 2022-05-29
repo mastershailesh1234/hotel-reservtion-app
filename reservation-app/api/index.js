@@ -6,7 +6,7 @@ import usersRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
-import morgan  from "morgan";
+import morgan from "morgan";
 import cors from "cors";
 
 const app = express();
@@ -14,7 +14,9 @@ dotenv.config();
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO);
+    await mongoose.connect(
+      "mongodb+srv://shailesh:shailesh@cluster0.lrzqajb.mongodb.net/?retryWrites=true&w=majority"
+    );
     console.log("Connected to mongoDB.");
   } catch (error) {
     throw error;

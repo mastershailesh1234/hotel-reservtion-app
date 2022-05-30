@@ -30,7 +30,10 @@ export default function Register() {
       };
       console.log(user);
       try {
-        await axios.post("/auth/register", user);
+        await axios.post(
+          "https://shailesh-reservation-app.herokuapp.com/api/auth/register",
+          user
+        );
         window.open("/login", "_self");
       } catch (err) {
         console.log(err);

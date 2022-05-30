@@ -1,18 +1,20 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 const Navbar = () => {
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const logout = () => {
     localStorage.removeItem("user");
     window.open("/", "_self");
   };
   const login = () => {
-    window.open("/login", "_self");
+    navigate("/login");
   };
   const register = () => {
-    window.open("/register", "_self");
+    navigate("/register");
   };
   return (
     <div className="navbar">
